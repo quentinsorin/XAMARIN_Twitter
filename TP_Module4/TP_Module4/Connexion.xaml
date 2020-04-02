@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:template="clr-namespace:TP_Module4.Template"
+             mc:Ignorable="d"
+             x:Class="TP_Module4.Connexion">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <template:Header></template:Header>
+            
+            <StackLayout x:Name="form" Orientation="Vertical">
+            
+            <Label Text="Connexion à Twitter" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" TextColor="Gray"></Label>
+
+            <Entry x:Name="identifiant" Placeholder="Identifiant Twitter" HorizontalOptions="FillAndExpand" MaxLength="50" Keyboard="Email" ReturnType="Next" TextColor="Gray"/>
+            <Entry x:Name="mdp" Placeholder="Mot de passe" HorizontalOptions="FillAndExpand" MaxLength="50" Keyboard="Default" IsPassword="True" ReturnType="Next" TextColor="Gray"/>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="memoriser"></Switch>
+                <Label Text="Mémoriser mes informations" TextColor="Gray"></Label>
+            </StackLayout>
+            <Label x:Name="error" IsVisible="False" TextColor="DarkRed"></Label>
+            <Button Text="Se connecter" HorizontalOptions="FillAndExpand" Clicked="Connexion_Clicked"></Button>
+            </StackLayout>
+            
+            <template:Footer></template:Footer>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

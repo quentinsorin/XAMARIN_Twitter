@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:utils="clr-namespace:TP_Module4.Utils"
+             xmlns:template="clr-namespace:TP_Module4.Template"
+             mc:Ignorable="d"
+             x:Class="TP_Module4.ListeTweets">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+        <template:Header></template:Header>
+            <ListView x:Name="tweets">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="10">
+                                        <Image Margin="10" WidthRequest="75" Aspect="AspectFit" Source="https://picsum.photos/50/50/?random.png"></Image>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding nomUtilisateur}" TextColor="Black"></Label>
+                                                <Label Text="{Binding pseudoUtilisateur}" TextColor="Black"></Label>
+                                                <Label Text="{Binding dateCreation}" TextColor="Black" HorizontalOptions="EndAndExpand"></Label>
+                                            </StackLayout>
+                                            <Label Text="{Binding texte} " TextColor="Black"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <ImageButton Source="{utils:ImageFromResources TP_Module4.Images.reply.png}" WidthRequest="25" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"></ImageButton>
+                                        <ImageButton Source="{utils:ImageFromResources TP_Module4.Images.retweet.png}" WidthRequest="25" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"></ImageButton>
+                                        <ImageButton Source="{utils:ImageFromResources TP_Module4.Images.favorite.png}" WidthRequest="25" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"></ImageButton>
+                                    </StackLayout>
+                                    <ContentView BackgroundColor="Gray" HorizontalOptions="FillAndExpand"></ContentView>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <template:Footer></template:Footer>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
